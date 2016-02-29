@@ -19,6 +19,13 @@ defmodule Kaisuu.Router do
     get "/", PageController, :index
   end
 
+  scope "/tag", Kaisuu do
+    pipe_through :browser
+
+    get "/", HashtagController, :index
+    get "/:hashtag", HashtagController, :show
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", Kaisuu do
   #   pipe_through :api

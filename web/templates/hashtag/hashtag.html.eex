@@ -1,0 +1,11 @@
+<h1 style="margin-bottom: 20px;"><small>trending emoji for</small> #<%= @hashtag %></h1>
+
+<div style="margin-bottom: 40px;">
+  <p style="display: <%= @display %>; font-style: italic; margin-top: 20px;">No emojis to display. Try another?</p>
+  <%= for {emoji, count} <- @hashtag_data do %>
+    <span class="kanji" id="<%= emoji %>" data-count="<%= count %>" title="<%= count %>"
+      style="cursor: pointer" data-toggle="tooltip" title="<%= count %>">
+      <%= emoji %>
+    </span>
+  <% end %>
+</div>

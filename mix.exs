@@ -40,6 +40,7 @@ defmodule Kaisuu.Mixfile do
      {:oauth, github: "tim/erlang-oauth"},
      {:extwitter, "~> 0.6"},
      {:redix, "~> 0.3"},
+     {:exmoji, "~> 0.2.2"},
      {:poolboy, "~> 1.5"}]
   end
 

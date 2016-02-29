@@ -64,9 +64,13 @@ channel.on("new_kanji", payload => {
   let kanjiCount = parseInt(kanjiElement.attr("data-count"));
 
   kanjiElement.effect("highlight", {}, 3000);
+  // kanjiElement.animate({rotate: '10deg'}, 100)
+  //   .animate({rotate: '-10deg'}, 100)
+  //   .animate({rotate: '0deg'}, 100);
   kanjiElement.attr("data-count", kanjiCount + 1);
+  kanjiElement.attr('title', kanjiCount + 1).tooltip('fixTitle');
 
-  let kanjiTotalCount = $("#kanji_total_count");
+  let kanjiTotalCount = $("#emoji_total_count");
   let oldCount =  parseInt(kanjiTotalCount.html());
   kanjiTotalCount.html(oldCount + 1);
 })
